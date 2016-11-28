@@ -1,95 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.welcome')
 
-        <title>Laravel</title>
+@section('content')
+<div id="welcome_pic">
+    <img id="changeMe" src="" />
+    <div id="welcome_login">
+		<ul id="login-dp">
+					 <div class="row">
+							<div class="col-md-12">
+								@if (Auth::guest())
+								<img src="/images/logo.png" height="100" width="auto" alt="be-fit logo" id="logo_welcome">
+								Login via
+								<div class="social-buttons">
+									<a href="{{ route('facebook.login') }}" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+									<!--<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>-->
+								</div>
+                                or
+								 <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                        {{ csrf_field() }}
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <!--<label for="email" class="col-md-4 control-label">E-Mail Address</label>-->
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+                            <div class="col-md-12">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email Address">
 
-            .full-height {
-                height: 100vh;
-            }
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <!--<label for="password" class="col-md-4 control-label">Password</label>-->
 
-            .position-ref {
-                position: relative;
-            }
+                            <div class="col-md-12">
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember"> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
-            .content {
-                text-align: center;
-            }
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary" id="welcome_button">
+                                    <i class="fa fa-btn fa-sign-in"></i> Login
+                                </button>
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                            </div>
+                        </div>
+                    </form>
+							</div>
+							<div class="bottom text-center">
+								New here ? <a href="{{ url('/register') }}"><b>Join Us</b></a>
+								@else
+								<a href="{{ url('/home') }}"><b>Home</b></a>
+								@endif
+							</div>
+					 </div>
+			</ul>
+    </div>
+</div>
+@endsection

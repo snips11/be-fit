@@ -1,0 +1,472 @@
+/*General*/
+html body{
+    background-color: #e6e8ef;
+}
+
+#main{
+    
+}
+
+a{
+    color: #b61423;
+}
+
+.btn-link{
+    color: #b61423;
+}
+
+.btn-primary{
+    background-color: #b61423;
+    border-color: #a5121e;
+}
+
+#logout{
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+}
+
+.btn-primary:hover{
+    background-color: #a5121e;
+    border-color: #b61423;
+}
+
+.btn-primary:focus{
+    background-color: #b61423;
+    border-color: #a5121e;
+}
+
+.btn-primary:active{
+    background-color: #b61423 !important;
+    border-color: #a5121e !important;
+}
+
+#full_btn{
+    width:100%;
+    margin-top: 20px;
+}
+
+/*Welcome Page*/
+
+#logo_welcome{
+    display: inherit;
+    margin: 0 auto;
+    padding-bottom: 12px;
+}
+
+#welcome_pic{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#welcome_login{
+    position: absolute;
+    top: 15%;
+    left: 38%;
+}
+
+#changeMe{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 100%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+
+
+#welcome_button{
+    width: 100%;
+}
+
+/*Home*/
+
+.new_notification{
+    background-color: #dff0d8;
+}
+
+/*Navbar Styling*/
+.navbar{
+    margin-bottom: 20px;
+}
+
+/*Button Styling*/
+#create_btn{
+    margin-top: 15px;
+}
+
+/*Profile Styling*/
+#profile_updates{
+    min-height: 100px;
+    line-height: 40px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+#profile_updates small{
+    float: right;
+}
+
+#follow_submit{
+    margin: 0 auto;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#follow_button{
+    margin: 20px 0px;
+}
+
+#profile_header{
+    height: 100px;
+    margin-top: 160px;
+    position: relative;
+}
+
+#profile_header img{
+    display: block;
+    margin: 0 auto;
+    height: 140px;
+    border: 3px white solid;
+
+}
+
+#profile_header p{
+    text-align: center;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 3px;
+    margin-top: 12px;
+    
+}
+
+.image_upload_button{
+    position: absolute;
+    bottom: 10px;
+    right: 16px;
+    display: none;
+    transition: all 0.4s ease;
+}
+
+#follow_button{
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    margin: 0px;
+
+}
+
+.image_upload_button p{
+    color:grey;
+    margin: 0px;
+}
+
+#profile_background:hover .image_upload_button{
+   display: block;
+   transition: all 0.4s ease;
+}
+
+#profile_lower{
+    margin-top: 20px;
+}
+
+#profile_background{
+    background-color: lightgray;
+    height: 400px;
+    position: relative;
+    transition: all 0.4s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#cover_upload{
+    display: none;
+}
+
+#subscribe{
+
+    text-align: center;
+}
+
+
+.expandUp{
+	animation-name: expandUp;
+	-webkit-animation-name: expandUp;	
+
+	animation-duration: 0.7s;	
+	-webkit-animation-duration: 0.7s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;		
+
+	visibility: visible !important;	
+}
+
+@keyframes expandUp {
+	0% {
+		transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		transform: translateY(3%);
+	}	
+	100% {
+		transform: translateY(0%) scale(1) scaleY(1);
+	}	
+}
+
+@-webkit-keyframes expandUp {
+	0% {
+		-webkit-transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		-webkit-transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		-webkit-transform: translateY(3%);
+	}	
+	100% {
+		-webkit-transform: translateY(0%) scale(1) scaleY(1);
+	}	
+}
+
+/*Workout Tracker*/
+
+.goals{
+    display: none;
+}
+
+#workout_btn{
+        margin-top: 25px;
+}
+
+/*Workout History */
+
+#shared_success{
+    display:none;
+}
+
+.tooltip-wrapper {
+  display: inline-block; /* display: block works as well */
+
+}
+
+.tooltip-wrapper .btn[disabled] {
+
+  pointer-events: none;
+}
+
+.shared_icon{
+    float:right;
+    margin-top: -18px;
+    color:#3c763d;
+}
+
+/* Dashboard */
+
+.right {
+height:200px;
+width:calc(100% - 300px);
+float:right;
+}
+
+.pro_container{
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #2e353d;
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  height: 100%;
+  color: #e1ffff;
+}
+.nav-side-menu .brand {
+  background-color: #23282e;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  /*    
+    .collapsed{
+       .arrow:before{
+                 font-family: FontAwesome;
+                 content: "\f053";
+                 display: inline-block;
+                 padding-left:10px;
+                 padding-right: 10px;
+                 vertical-align: middle;
+                 float:right;
+            }
+     }
+*/
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+}
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  border-left: 3px solid #d19b3d;
+  background-color: #4f5b69;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+.right{
+    width:100%;
+}
+  
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
