@@ -85,7 +85,7 @@ class User extends Authenticatable
 
     public function workout_training()
     {
-        return $this->hasMany('App\workout_training');
+        return $this->hasMany('App\Weight_Training_Plans');
     }
     public function isAdmin()
     {

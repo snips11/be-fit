@@ -39,7 +39,7 @@ Route::group(['middleware' => 'admin'], function () {
 
 Route::get('/training', 'TrainingController@index');
 
-Route::resource('training/weights-training-plan', 'WeightsTrainingPlanController');
+Route::resource('weights-training-plan', 'WeightsTrainingPlanController');
 
 
 //////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\

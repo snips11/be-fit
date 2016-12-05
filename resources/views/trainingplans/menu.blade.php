@@ -8,7 +8,7 @@
             </br>
            Training Plans
             </br>
-            <a href="{{ url ('/training/weights-training-plan')}}" class="btn btn-default">Weight Exercises</a>
+            <a href="{{ route ('weights-training-plan.index')}}" class="btn btn-default">Weight Exercises</a>
             <a href="#" class="btn btn-default">Running</a>
             <a href="#" class="btn btn-default">Yoga</a>
         </div>

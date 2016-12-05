@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use Paginate;
 use App\Http\Requests;
 use App\weight_exercises;
-use App\workout_training;
+use App\Weight_Training_Plans;
 use Session;
 use Redirect;
 use Auth;
@@ -52,7 +52,7 @@ class WeightsTrainingPlanController extends Controller
       //Get Excercies
       $ex = weight_exercises::all();
 
-      return view('workout_training.index', ['entries' => $entries,])->with('ex',$ex);
+      return view('trainingplans.weight_training.index', ['entries' => $entries,])->with('ex',$ex);
 
     }
 
@@ -74,32 +74,38 @@ class WeightsTrainingPlanController extends Controller
     */
     public function store(Request $request)
     {
+
       //validate
       $this->validate($request, array (
           //'user_id' => 'required|integer|unique:workout_goals,user_id,NULL,id,exercise,'.$request->exercise,
           'reps' => 'required|integer',
-          'exercise' => 'required|unique:workout_trainings,exercise,NULL,id,created_at,'.$request->date,
+          'exercise' => 'required|unique:weight__training__plans,exercise_id,NULL,id,created_at,'.$request->date,
 
 
       ));
 
-     $response = workout_training::where('exercise', $request->exercise)->where('date', $request->date)->where('user_id', Auth::User()->id)->get();
+     $response = weight_training_plans::where('exercise_id', $request->exercise)->where('date', $request->date)->where('user_id', Auth::User()->id)->get();
      if(count($response)>0){
+
+       $exercise_id = $request->exercise;
+
+       $exercise = weight_exercises::find($exercise_id)->exercise;
+
       //session flash message
-      Session::flash('workout_error','You have already created a '.$request->exercise.' workout for '.$request->date);
+      Session::flash('workout_error','You have already created a '.$exercise.' workout for '.$request->date);
 
       //redirect
       $currentPage = LengthAwarePaginator::resolveCurrentPage();
-      return Redirect::to('workout_training?page='.$currentPage);
+      return Redirect::to('weights-training-plan?page='.$currentPage);
      }
      elseif(count($response)==0)
      {
       //store
-      $post = new workout_training;
+      $post = new weight_training_plans;
 
       $post->user_id = $request->user_id;
       $post->date = $request->date;
-      $post->exercise = $request->exercise;
+      $post->exercise_id = $request->exercise;
       $post->weight = $request->weight;
       $post->reps = $request->reps;
       $post->sets = $request->sets;
@@ -112,7 +118,7 @@ class WeightsTrainingPlanController extends Controller
 
       //redirect
       $currentPage = LengthAwarePaginator::resolveCurrentPage();
-      return Redirect::to('workout_training?page='.$currentPage);
+      return Redirect::to('weights-training-plan?page='.$currentPage);
      }
     }
 
